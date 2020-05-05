@@ -7,8 +7,11 @@ Please click [here](https://github.com/charliegucci/T3A1)
 
 ## Table of Contents
 
-- [Provide an overview and description of a standard source control process for a large project](#Provide-an-overview-and-description-of-a-standard-source-control-process-for-a-large-project)
-- [What are the most important aspects of quality software](#What-are-the-most-important-aspects-of-quality-software)
+- [Provide an overview and description of a standard source control process for a large project](#Provide-an-overview-and-description-of-a-standard-source-control-process-for-a-large-project)<br/>
+
+- [What are the most important aspects of quality software](#What-are-the-most-important-aspects-of-quality-software)<br/>
+
+- [Outline a standard high level structure for a MERN stack application and explain the components](#Outline-a-standard-high-level-structure-for-a-MERN-stack-application-and-explain-the-components)<br/>
 
 ## Provide an overview and description of a standard source control process for a large project
 
@@ -90,6 +93,29 @@ The following aspect will measure the quality of a software but depends upon the
 | Portability       | Portable software is usable in different environments and contexts. It is highly reusable. Portable software is decoupled from specific operating systems, types of hardware, and deployment contexts. Extremely portable software is reusable across projects and problem domains.                                                                                                      |
 | Efficiency        | Efficient software uses as few physical resources as possible. It is fast. It is memory-efficient. It consumes few CPU cycles. It uses little battery life. It makes few external service calls. It minimizes the number of database calls. Efficient software accomplishes as much as possible with the least amount of resources.                                                      |
 
+<br/>
+
+## Outline a standard high level structure for a MERN stack application and explain the components
+
+---
+
+![mern](docs/mern.jpg) <br/>
+
+MERN stack is the combination of technologies used to create a web application. Any web application will be made using multiple technologies (frameworks, libraries, databases etc).
+
+The main advantage for developers using the MERN stack is that every line of code is written in JavaScript. This is a programming language that’s used everywhere, both for client-side code and server-side code. With one language across tiers, there’s no need for context switching.
+
+The MERN stack is a JavaScript stack that’s designed to make the development process smoother. MERN includes four open-source components: MongoDB, Express, React, and Node.js. These components provide an end-to-end framework for developers to work in.<br/>
+
+| #       | Components                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
+| :------ | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| MongoDB | A cross-platform document database. It is a NoSQL (non-relational) document-oriented database. While conventional relational databases have a typical schema design based on columns and tables, MongoDB is schema-less. Data is stored in flexible documents with a JSON (JavaScript Object Notation)-based query language. The content, size, and number of fields in the documents can differ from one to the next. This means that the data structure to be changed over time.                                                                                                                                                                                       |
+| Express | A back-end web application framework. It is a web application framework for Node.js, another MERN component. Instead of writing full web server code by hand on Node.js directly, developers use Express to simplify the task of writing server code. There’s no need to repeat the same code over and over, as you would with the Node.js HTTP module. The Express framework is designed for building robust web applications and APIs. It’s known for its fast speed and minimalist structure, with many features available as plugins.                                                                                                                                |
+| React   | A JavaScript library for building user interfaces. It was originally created by a software engineer at Facebook, and was later open-sourced. It is maintained by Facebook, as well as a community of development companies and individual developers. Its library can be used for creating views rendered in HTML. React views are declarative. This means that developers don’t have to worry about managing the effects of changes in the view’s state or changes in the data. Instead of relying on templates to automate the creation of repetitive HTML or DOM elements, React uses a full-featured Javascript to construct repetitive or conditional DOM elements. |
+| Node.js | A cross-platform JavaScript runtime environment. It was initially built for Google Chrome, and later open-sourced by Google in 2008. It is built on Chrome’s V8 JavaScript engine. It’s designed to build scalable network applications, and can execute JavaScript code outside of a browser. Node.js works without an enclosing HTML page, instead using its own module system based on CommonJS, to put together multiple JavaScript files.                                                                                                                                                                                                                           |
+
+<br/>
+
 ## Reference:
 
 ---
@@ -97,3 +123,5 @@ The following aspect will measure the quality of a software but depends upon the
 A Visual Guide to Version Control, Better Explained , https://betterexplained.com/articles/a-visual-guide-to-version-control/ <br/>
 
 The Seven Aspects of Software Quality, Silas Reinagel, https://www.silasreinagel.com/blog/2016/11/15/the-seven-aspects-of-software-quality/ <br/>
+
+Everything You Need to Know about the MERN Stack, Hyperion Development, https://blog.hyperiondev.com/index.php/2018/09/10/everything-need-know-mern-stack/ <br/>
