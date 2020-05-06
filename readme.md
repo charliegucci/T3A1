@@ -13,7 +13,7 @@ Please click [here](https://github.com/charliegucci/T3A1)
 
 - [Outline a standard high level structure for a MERN stack application and explain the components](#Outline-a-standard-high-level-structure-for-a-MERN-stack-application-and-explain-the-components)<br/>
 
-- [A team is about to engage in a project, developing a website for a small business. What knowledge and skills would they need in order to develop the project](#A-team-is-about-to-engage-in-a-project,-developing-a-website-for-a-small-business.-What-knowledge-and-skills-would-they-need-in-order-to-develop-the-project)<br/>
+- [A team is about to engage in a project, developing a website for a small business. What knowledge and skills would they need in order to develop the project](#A-team-is-about-to-engage-in-a-project-developing-a-website-for-a-small-business-What-knowledge-and-skills-would-they-need-in-order-to-develop-the-project)<br/>
 
 ## Provide an overview and description of a standard source control process for a large project
 
