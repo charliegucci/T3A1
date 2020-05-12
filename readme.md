@@ -17,6 +17,8 @@ Please click [here](https://github.com/charliegucci/T3A1)
 
 - [With reference to one of your own projects, discuss what knowledge or skills were required to complete your project, and to overcome challenges](#With-reference-to-one-of-your-own-projects-discuss-what-knowledge-or-skills-were-required-to-complete-your-project-and-to-overcome-challenges)<br/>
 
+- [With reference to one of your own projects, evaluate how effective your knowledge and skills were for this project, and suggest changes or improvements for future projects of a similar nature](#With-reference-to-one-of-your-own-projects-evaluate-how-effective-your-knowledge-and-skills-were-for-this-project-and-suggest-changes-or-improvements-for-future-projects-of-a-similar-nature)<br/>
+
 ## Provide an overview and description of a standard source control process for a large project
 
 ---
@@ -158,8 +160,20 @@ In relation to my last rails project (marketplace app), listed below were the kn
 | :--------------------- | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Time Limitation        | Software development is a time-game. We work under pressured environments and strive to complete project requirements within strict timelines. We used Trello and Canban methodology to keep track and prioritized the implementation of the application.                                                                                                                                                                                                                                                                                                                   |
 | User-friendly Design   | It is important for the web developers to create a sophisticated software with comprehensive coding so that it doesn’t lag behind in the race of the most advanced application available on the Internet. End users will not appreciate your website for its intricate coding, or the exquisite software that you use. The only thing your user will remember you for is how user-friendly your website is and how easy navigation is on your portal. We tried to have some User Testing from our cohorts and educators so they can give feedbacks for the user experience. |
+<br/>
 
-## Reference:
+## With reference to one of your own projects, evaluate how effective your knowledge and skills were for this project, and suggest changes or improvements for future projects of a similar nature
+
+---
+If given chance to redo everything, il will consider;
+| Steps | Changes |
+| :------- | :-------------- |
+| Reevaluate | I get it, creating a project isn’t as easy as it sounds specially with the limited resources you have. Improving a project takes planning, and the process can take weeks but since you already have idea what to do it could lessen the time. To help ease the rebuilding a project, it will be great if we work in teams so we could collaborate more and we could take the time to learn as much as we can about the team’s opinions of the project and of each other.|
+| Figure out the failures | Sometimes when we plan the project we struggle to find out the complexity of the project. We tend to add all the features that we think is good but in the end we figured out that they dont worked or not compatible with each other. People learn from experience so the next time we encounter it we know what to do.|
+<br/>
+I could say that with reference to my projects they were satisfactory for me and probably for others and the skills and knowledge that I acquired while studying equipped me on how to proceed.  
+
+## Reference
 
 ---
 
