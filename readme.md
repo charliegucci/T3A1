@@ -19,6 +19,8 @@ Please click [here](https://github.com/charliegucci/T3A1)
 
 - [With reference to one of your own projects, evaluate how effective your knowledge and skills were for this project, and suggest changes or improvements for future projects of a similar nature](#With-reference-to-one-of-your-own-projects-evaluate-how-effective-your-knowledge-and-skills-were-for-this-project-and-suggest-changes-or-improvements-for-future-projects-of-a-similar-nature)<br/>
 
+- [Explain control flow, using an example from the JavaScript programming language](#Explain-control-flow-using-an-example-from-the-JavaScript-programming-language)<br/>
+
 ## Provide an overview and description of a standard source control process for a large project
 
 ---
@@ -169,9 +171,20 @@ If given chance to redo everything, il will consider;
 | Steps | Changes |
 | :------- | :-------------- |
 | Reevaluate | I get it, creating a project isn’t as easy as it sounds specially with the limited resources you have. Improving a project takes planning, and the process can take weeks but since you already have idea what to do it could lessen the time. To help ease the rebuilding a project, it will be great if we work in teams so we could collaborate more and we could take the time to learn as much as we can about the team’s opinions of the project and of each other.|
-| Figure out the failures | Sometimes when we plan the project we struggle to find out the complexity of the project. We tend to add all the features that we think is good but in the end we figured out that they dont worked or not compatible with each other. People learn from experience so the next time we encounter it we know what to do.|
+| Figure out the failures | Sometimes when we plan the project we struggle to find out the complexity of the project. We tend to add all the features that we think is good but in the end we figured out that they don't worked or not compatible with each other. People learn from experience so the next time we encounter it we know what to do.|
 <br/>
-I could say that with reference to my projects they were satisfactory for me and probably for others and the skills and knowledge that I acquired while studying equipped me on how to proceed.  
+I could say that with reference to my projects they were satisfactory for me and probably for others and the skills and knowledge that I acquired while studying equipped me on how to proceed.<br/>
+
+## Explain control flow, using an example from the JavaScript programming language
+
+---
+Most of our code involves control flow in which often times we want our program to act differently based on the information supplied to it. In Javascript it uses control flow like any other languages, we just need to understand and be able to use different operators, how to use them and looping.<br/>
+
+| Operators | Description | Example |
+| :------- | :-------------- | :---:|
+|Undefined and Null | There are a couple of JavaScript objects that don’t really fit into any type. Those are the values undefined and null. You will get undefined when you are looking for something that does not exist like a variable that does not have a value yet. undefined simply means what you are asking for does not exist.| ![undefined](docs/undefined.png) <br/>
+
+
 
 ## Reference
 
