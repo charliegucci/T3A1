@@ -2,7 +2,7 @@
 
 ## Submitted by: Wilson Esmundo
 
-To view the Workbook in Github <br/>
+To view the T3A1 Workbook in Github <br/>
 Please click [here](https://github.com/charliegucci/T3A1)
 
 ## Table of Contents
