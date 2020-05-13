@@ -2,7 +2,7 @@
 
 ## Submitted by: Wilson Esmundo
 
-To view in GitHub <br/>
+To view the Workbook in Github <br/>
 Please click [here](https://github.com/charliegucci/T3A1)
 
 ## Table of Contents
@@ -20,6 +20,8 @@ Please click [here](https://github.com/charliegucci/T3A1)
 - [With reference to one of your own projects, evaluate how effective your knowledge and skills were for this project, and suggest changes or improvements for future projects of a similar nature](#With-reference-to-one-of-your-own-projects-evaluate-how-effective-your-knowledge-and-skills-were-for-this-project-and-suggest-changes-or-improvements-for-future-projects-of-a-similar-nature)<br/>
 
 - [Explain control flow, using an example from the JavaScript programming language](#Explain-control-flow-using-an-example-from-the-JavaScript-programming-language)<br/>
+
+- [Explain type coercion, using examples from the JavaScript programming language](#Explain-type-coercion-using-examples-from-the-JavaScript-programming-language)<br/>
 
 ## Provide an overview and description of a standard source control process for a large project
 
@@ -189,6 +191,27 @@ Most of our code involves control flow in which often times we want our program 
 | If Operator | We can use if to check and see if an expression is true. If it is, run some code. If it is not, skip the code and keep running the program. | ![if](docs/if.png) |
 | If / Else if / Else | These statements must be used with if and must come after it. These statements will be evaluated if the initial if returns false. We can think of the else if as another if statement that has been chained (we can have as many else if statements we want). The else statement will always come at the end of an if-else if chain, and will act as a default. If none of the expressions returned true, the else code block will be run no matter what. If any of the previous if or else if expressions are true, the else statement code block will not be run. | ![if_elseif](docs/if_elseif.png) ![if_else](docs/if_else.png) |
 
+## Explain type coercion, using examples from the JavaScript programming language
+
+---
+### Type Coercion
+
+Type Coercion is the process of converting value from one type to another (such as string to number, object to boolean, and so on). Any type, be it primitive or an object, is a valid subject for type coercion. To understand how basic type coercion works in JavaScript you can open up your console and simply type "5" == 5 . The JavaScript engine will return true for this case. This will not be possible in a strongly typed language. In plain words, the JavaScript engine is implicitly changing string type "5" to numeric type value 5 and checking with equality operator. However, on trying "5" === 5 with strict equality operator will return false. There is no implicit type coercion happening in this case. The difference between == and === is usually characterized that == checks for value equality and === checks for both value and type equality. <br/>
+
+![type_coercion](docs/type_coercion.png)<br/>
+
+| Types of Coercion | Description | Example |
+| :------- | :--------------: | :---:|
+| Explicit or ‘Type casting’ | happens when the programmer explicitly converts type of value to a desired type. | ![explicit](docs/explicit.png) |
+| Implicit | are the type conversions which are hidden. JavaScript being the weakly-typed language, values can be converted between different types ‘implicitly’. | ![implicit](docs/implicit.png) |
+<br/>
+
+| Types of Conversion | Description | Example |
+| :------- | :--------------: | :---:|
+| String conversion | toString() can also be used to convert any type to string, however, as explicit as it might seem from the code, it is very much implicit in nature. Reason being it cannot be directly used on primitive value like 1234 or Boolean true. So, a type variable being an object wrapper will invoke toString() method. | ![string_explicit](docs/string_explicit.png)  ![string_implicit](docs/string_implicit.png) |
+| Numeric conversion | Number(..) function coerces to any other type value to a primitivenumber value. Another way of explicitly coercion is using unary operator + where it explicitly coerces its operand (c) to a numbervalue.| ![numeric_explicit](docs/numeric_explicit.png) ![numeric_implicit](docs/numeric_implicit.png) |
+| Boolean conversion | To explicitly convert a value to a boolean type Boolean(..) function can be used. Just like the unary + operator coerces a value to a number the unary ! negate operator explicitly coerces a value to a boolean. ! operator explicitly inverses the truthy to falsy and vice versa. Any value used in these contexts that is not already a boolean will first be implicitly coerced to a boolean. Both Or and And operators perform a boolean test on the first operand (a or c). For the OR operator, if the test is true, the OR expression results in the value of the first operand (a or c). If the test is false, the OR expression results in the value of the second operand (b). Inversely, for the && operator, if the test is true, the && expression results in the value of the second operand (b). If the test is false, the && expression results in the value of the first operand (a or c). This test returns the first falsy value. | Explicit <br/> ![boolean_explicit](docs/boolean_explicit.png) <br/> Implicit <br/> ![boolean_implicit](docs/boolean_implicit.png) |
+
 
 
 ## Reference
@@ -204,4 +227,7 @@ Everything You Need to Know about the MERN Stack, Hyperion Development, https://
 12 Skills You Need to Develop a Website, Julia Blake, https://onextrapixel.com/12-skills-you-need-to-develop-a-website/ <br/>
 
 Introduction to JavaScript: Control Flow, Mahendra Choudhary, https://medium.com/javascript-in-plain-english/introduction-to-javascript-control-flow-6272f92b75fa <br/>
+
+Intro to Type Coercion in JavaScript, Abid Rahim, https://medium.com/@abid.rahim1/intro-to-type-coercion-in-javascript-5b9a397c1e95 <br/>
+
 
