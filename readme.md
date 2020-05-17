@@ -248,3 +248,5 @@ Everything You Need to Know about the MERN Stack, Hyperion Development, https://
 Introduction to JavaScript: Control Flow, Mahendra Choudhary, https://medium.com/javascript-in-plain-english/introduction-to-javascript-control-flow-6272f92b75fa <br/>
 
 Intro to Type Coercion in JavaScript, Abid Rahim, https://medium.com/@abid.rahim1/intro-to-type-coercion-in-javascript-5b9a397c1e95 <br/>
+
+Basics of JavaScript: Data Types, Tim Han, https://medium.com/@timhancodes/basics-of-javascript-data-types-385bab24b51 <br/>
