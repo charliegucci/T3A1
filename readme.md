@@ -27,6 +27,8 @@ Please click [here](https://github.com/charliegucci/T3A1)
 
 - [Explain how arrays can be manipulated in JavaScript, using examples from the JavaScript programming language](#Explain-how-arrays-can-be-manipulated-in-JavaScript-using-examples-from-the-JavaScript-programming-language)<br/>
 
+- [Explain how objects can be manipulated in JavaScript, using examples from the JavaScript programming language](#Explain-how-objects-can-be-manipulated-in-JavaScript-using-examples-from-the-JavaScript-programming-language)<br/>
+
 ## Provide an overview and description of a standard source control process for a large project
 
 ---
@@ -266,6 +268,24 @@ Type Coercion is the process of converting value from one type to another (such 
 |                                  | **Array.reduce** combines elements of an array to return a value by calling the reduceFunction on all the elements to combine them. reduceFunction takes 2 arguments, which is the current and next element in the array. |     ![reduce](docs/reduce.png)     |
 |                                  | **Array.reverse** returns a new array with the existing array’s elements in reverse order.                                                                                                                                |    ![reverse](docs/reverse.png)    |
 
+## Explain how objects can be manipulated in JavaScript, using examples from the JavaScript programming language
+
+---
+
+| Object Manipulation         | Description                                                                                                                                                                                                              |               Example                |
+| :-------------------------- | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | :----------------------------------: |
+| Accessing Object Properties | We can access object properties in two different ways. One of them is bracket notation and another is the dot notation.                                                                                                  | ![bracket_dot](docs/bracket_dot.png) |
+| Get Values from an Object   | Object.values() returns an array of the values of an object                                                                                                                                                              |      ![values](docs/values.png)      |
+| Get Keys from an Object     | Object.keys() returns an array of the keys of an object.                                                                                                                                                                 |        ![keys](docs/keys.png)        |
+| Object To Array Entries     | Object.entries() creates an array which contains arrays of key/value pairs of an object.                                                                                                                                 |     ![entries](docs/entries.png)     |
+| Merging Object with Spread  | Merging two objects and that returns a new object.                                                                                                                                                                       |       ![merge](docs/merge.png)       |
+| Combining Two Object        | Object.assign() is similar to the spread operator. Allows for objects to be combined together.                                                                                                                           |      ![assign](docs/assign.png)      |
+| Freezing An Object          | Object.freeze() prevents from modifying existing properties or adding new properties and values in the object. It’s often what people think const does, however const allows you to modify an object.                    |      ![freeze](docs/freeze.png)      |
+| Object Frozen or Not        | The Object.isFrozen() determines if an object is frozen. Return Boolean value.                                                                                                                                           |      ![frozen](docs/frozen.png)      |
+| Sealing an Object           | Object.seal() seals an object, preventing new properties from being added to it and marking all existing properties as non-configurable. Values of present properties can still be changed as long as they are writable. |        ![seal](docs/seal.png)        |
+| Object Sealed or Not        | The Object.isSealed() method determines if an object is sealed.                                                                                                                                                          |      ![sealed](docs/sealed.png)      |
+| Localization                | Object.toLocaleString() method returns a string representing the object. This method is meant to be overridden by derived objects for locale-specific purposes.                                                          |       ![local](docs/local.png)       |
+
 ## Reference
 
 ---
@@ -285,3 +305,5 @@ Intro to Type Coercion in JavaScript, Abid Rahim, https://medium.com/@abid.rahim
 Basics of JavaScript: Data Types, Tim Han, https://medium.com/@timhancodes/basics-of-javascript-data-types-385bab24b51 <br/>
 
 How to Manipulate Arrays in JavaScript, Bolaji Ayodeji,https://www.freecodecamp.org/news/manipulating-arrays-in-javascript/ <br/>
+
+Manipulating Objects in JavaScript, Todd Fronenberg, https://medium.com/@TK_CodeBear/manipulating-objects-in-javascript-59fefeb6a738 <br/>
