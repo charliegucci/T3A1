@@ -29,6 +29,8 @@ Please click [here](https://github.com/charliegucci/T3A1)
 
 - [Explain how objects can be manipulated in JavaScript, using examples from the JavaScript programming language](#Explain-how-objects-can-be-manipulated-in-JavaScript-using-examples-from-the-JavaScript-programming-language)<br/>
 
+- [Explain how JSON can be manipulated in JavaScript, using examples from the JavaScript programming language](#Explain-how-JSON-can-be-manipulated-in-JavaScript-using-examples-from-the-JavaScript-programming-language)<br/>
+
 ## Provide an overview and description of a standard source control process for a large project
 
 ---
@@ -286,6 +288,17 @@ Type Coercion is the process of converting value from one type to another (such 
 | Object Sealed or Not        | The Object.isSealed() method determines if an object is sealed.                                                                                                                                                          |      ![sealed](docs/sealed.png)      |
 | Localization                | Object.toLocaleString() method returns a string representing the object. This method is meant to be overridden by derived objects for locale-specific purposes.                                                          |       ![local](docs/local.png)       |
 
+<br/>
+
+## Explain how JSON can be manipulated in JavaScript, using examples from the JavaScript programming language
+
+---
+
+| JSON Manipulation | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     |             Example              |
+| :---------------- | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | :------------------------------: |
+| JSON.parse()      | To parse is to divide (a sentence) into grammatical parts and identify the parts and their relations to each other. In computer programming, a string is traditionally a sequence of characters. When we receive data from a web server, the data is always a string. We parse the data using JSON.parse() and that turns the data into a JavaScript object. Before parsing it, it is just a string, just some text and you cannot access the data encoded in it. After parsing it, it becomes a JavaScript Object and you can access the data. |     ![parse](docs/parse.png)     |
+| JSON.stringify()  | JSON.stringify() converts a JavaScript object to a JSON string. When sending data to a web server, the data has to be a string. We can convert a JavaScript object into a string by by using the JSON.stringify(). It can take 2 additional arguments. The first one being a replacer function and the second a string or number value to use as a space in the returned string. It can also be used to filter out values as those values that returned as undefined will not be returned in the string.                                        | ![stringify](docs/stringify.png) |
+
 ## Reference
 
 ---
@@ -307,3 +320,5 @@ Basics of JavaScript: Data Types, Tim Han, https://medium.com/@timhancodes/basic
 How to Manipulate Arrays in JavaScript, Bolaji Ayodeji,https://www.freecodecamp.org/news/manipulating-arrays-in-javascript/ <br/>
 
 Manipulating Objects in JavaScript, Todd Fronenberg, https://medium.com/@TK_CodeBear/manipulating-objects-in-javascript-59fefeb6a738 <br/>
+
+Understanding JSON in JavaScript, Timothy Robards, https://medium.com/@timothyrobards/understanding-json-in-javascript-5098876d0915 <br/>
