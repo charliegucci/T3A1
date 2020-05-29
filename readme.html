@@ -1,0 +1,1130 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>readme.md</title>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+
+<style>
+/* https://github.com/microsoft/vscode/blob/master/extensions/markdown-language-features/media/markdown.css */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+body {
+	font-family: var(--vscode-markdown-font-family, -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif);
+	font-size: var(--vscode-markdown-font-size, 14px);
+	padding: 0 26px;
+	line-height: var(--vscode-markdown-line-height, 22px);
+	word-wrap: break-word;
+}
+
+#code-csp-warning {
+	position: fixed;
+	top: 0;
+	right: 0;
+	color: white;
+	margin: 16px;
+	text-align: center;
+	font-size: 12px;
+	font-family: sans-serif;
+	background-color:#444444;
+	cursor: pointer;
+	padding: 6px;
+	box-shadow: 1px 1px 1px rgba(0,0,0,.25);
+}
+
+#code-csp-warning:hover {
+	text-decoration: none;
+	background-color:#007acc;
+	box-shadow: 2px 2px 2px rgba(0,0,0,.25);
+}
+
+body.scrollBeyondLastLine {
+	margin-bottom: calc(100vh - 22px);
+}
+
+body.showEditorSelection .code-line {
+	position: relative;
+}
+
+body.showEditorSelection .code-active-line:before,
+body.showEditorSelection .code-line:hover:before {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 0;
+	left: -12px;
+	height: 100%;
+}
+
+body.showEditorSelection li.code-active-line:before,
+body.showEditorSelection li.code-line:hover:before {
+	left: -30px;
+}
+
+.vscode-light.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.15);
+}
+
+.vscode-light.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.40);
+}
+
+.vscode-light.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-dark.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.4);
+}
+
+.vscode-dark.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.60);
+}
+
+.vscode-dark.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-high-contrast.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 160, 0, 0.7);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 160, 0, 1);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+img {
+	max-width: 100%;
+	max-height: 100%;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+a:focus,
+input:focus,
+select:focus,
+textarea:focus {
+	outline: 1px solid -webkit-focus-ring-color;
+	outline-offset: -1px;
+}
+
+hr {
+	border: 0;
+	height: 2px;
+	border-bottom: 2px solid;
+}
+
+h1 {
+	padding-bottom: 0.3em;
+	line-height: 1.2;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+}
+
+h1, h2, h3 {
+	font-weight: normal;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+table > thead > tr > th {
+	text-align: left;
+	border-bottom: 1px solid;
+}
+
+table > thead > tr > th,
+table > thead > tr > td,
+table > tbody > tr > th,
+table > tbody > tr > td {
+	padding: 5px 10px;
+}
+
+table > tbody > tr + tr > td {
+	border-top: 1px solid;
+}
+
+blockquote {
+	margin: 0 7px 0 5px;
+	padding: 0 16px 0 10px;
+	border-left-width: 5px;
+	border-left-style: solid;
+}
+
+code {
+	font-family: Menlo, Monaco, Consolas, "Droid Sans Mono", "Courier New", monospace, "Droid Sans Fallback";
+	font-size: 1em;
+	line-height: 1.357em;
+}
+
+body.wordWrap pre {
+	white-space: pre-wrap;
+}
+
+pre:not(.hljs),
+pre.hljs code > div {
+	padding: 16px;
+	border-radius: 3px;
+	overflow: auto;
+}
+
+pre code {
+	color: var(--vscode-editor-foreground);
+	tab-size: 4;
+}
+
+/** Theming */
+
+.vscode-light pre {
+	background-color: rgba(220, 220, 220, 0.4);
+}
+
+.vscode-dark pre {
+	background-color: rgba(10, 10, 10, 0.4);
+}
+
+.vscode-high-contrast pre {
+	background-color: rgb(0, 0, 0);
+}
+
+.vscode-high-contrast h1 {
+	border-color: rgb(0, 0, 0);
+}
+
+.vscode-light table > thead > tr > th {
+	border-color: rgba(0, 0, 0, 0.69);
+}
+
+.vscode-dark table > thead > tr > th {
+	border-color: rgba(255, 255, 255, 0.69);
+}
+
+.vscode-light h1,
+.vscode-light hr,
+.vscode-light table > tbody > tr + tr > td {
+	border-color: rgba(0, 0, 0, 0.18);
+}
+
+.vscode-dark h1,
+.vscode-dark hr,
+.vscode-dark table > tbody > tr + tr > td {
+	border-color: rgba(255, 255, 255, 0.18);
+}
+
+</style>
+
+<style>
+/* Tomorrow Theme */
+/* http://jmblog.github.com/color-themes-for-google-code-highlightjs */
+/* Original theme - https://github.com/chriskempson/tomorrow-theme */
+
+/* Tomorrow Comment */
+.hljs-comment,
+.hljs-quote {
+	color: #8e908c;
+}
+
+/* Tomorrow Red */
+.hljs-variable,
+.hljs-template-variable,
+.hljs-tag,
+.hljs-name,
+.hljs-selector-id,
+.hljs-selector-class,
+.hljs-regexp,
+.hljs-deletion {
+	color: #c82829;
+}
+
+/* Tomorrow Orange */
+.hljs-number,
+.hljs-built_in,
+.hljs-builtin-name,
+.hljs-literal,
+.hljs-type,
+.hljs-params,
+.hljs-meta,
+.hljs-link {
+	color: #f5871f;
+}
+
+/* Tomorrow Yellow */
+.hljs-attribute {
+	color: #eab700;
+}
+
+/* Tomorrow Green */
+.hljs-string,
+.hljs-symbol,
+.hljs-bullet,
+.hljs-addition {
+	color: #718c00;
+}
+
+/* Tomorrow Blue */
+.hljs-title,
+.hljs-section {
+	color: #4271ae;
+}
+
+/* Tomorrow Purple */
+.hljs-keyword,
+.hljs-selector-tag {
+	color: #8959a8;
+}
+
+.hljs {
+	display: block;
+	overflow-x: auto;
+	color: #4d4d4c;
+	padding: 0.5em;
+}
+
+.hljs-emphasis {
+	font-style: italic;
+}
+
+.hljs-strong {
+	font-weight: bold;
+}
+</style>
+
+<style>
+/*
+ * Markdown PDF CSS
+ */
+
+ body {
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif, "Meiryo";
+	padding: 0 12px;
+}
+
+pre {
+	background-color: #f8f8f8;
+	border: 1px solid #cccccc;
+	border-radius: 3px;
+	overflow-x: auto;
+	white-space: pre-wrap;
+	overflow-wrap: break-word;
+}
+
+pre:not(.hljs) {
+	padding: 23px;
+	line-height: 19px;
+}
+
+blockquote {
+	background: rgba(127, 127, 127, 0.1);
+	border-color: rgba(0, 122, 204, 0.5);
+}
+
+.emoji {
+	height: 1.4em;
+}
+
+code {
+	font-size: 14px;
+	line-height: 19px;
+}
+
+/* for inline code */
+:not(pre):not(.hljs) > code {
+	color: #C9AE75; /* Change the old color so it seems less like an error */
+	font-size: inherit;
+}
+
+/* Page Break : use <div class="page"/> to insert page break
+-------------------------------------------------------- */
+.page {
+	page-break-after: always;
+}
+
+</style>
+
+<script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+</head>
+<body>
+  <script>
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: document.body.classList.contains('vscode-dark') || document.body.classList.contains('vscode-high-contrast')
+          ? 'dark'
+          : 'default'
+    });
+  </script>
+<h1 id="t3a1-workbook">T3A1 Workbook</h1>
+<h2 id="submitted-by-wilson-esmundo">Submitted by: Wilson Esmundo</h2>
+<p>To view the T3A1 Workbook in Github <br/>
+Please click <a href="https://github.com/charliegucci/T3A1">here</a></p>
+<h2 id="table-of-contents">Table of Contents</h2>
+<ul>
+<li>
+<p><a href="#Provide-an-overview-and-description-of-a-standard-source-control-process-for-a-large-project">Provide an overview and description of a standard source control process for a large project</a><br/></p>
+</li>
+<li>
+<p><a href="#What-are-the-most-important-aspects-of-quality-software">What are the most important aspects of quality software</a><br/></p>
+</li>
+<li>
+<p><a href="#Outline-a-standard-high-level-structure-for-a-MERN-stack-application-and-explain-the-components">Outline a standard high level structure for a MERN stack application and explain the components</a><br/></p>
+</li>
+<li>
+<p><a href="#A-team-is-about-to-engage-in-a-project-developing-a-website-for-a-small-business-What-knowledge-and-skills-would-they-need-in-order-to-develop-the-project">A team is about to engage in a project, developing a website for a small business. What knowledge and skills would they need in order to develop the project</a><br/></p>
+</li>
+<li>
+<p><a href="#With-reference-to-one-of-your-own-projects-discuss-what-knowledge-or-skills-were-required-to-complete-your-project-and-to-overcome-challenges">With reference to one of your own projects, discuss what knowledge or skills were required to complete your project, and to overcome challenges</a><br/></p>
+</li>
+<li>
+<p><a href="#With-reference-to-one-of-your-own-projects-evaluate-how-effective-your-knowledge-and-skills-were-for-this-project-and-suggest-changes-or-improvements-for-future-projects-of-a-similar-nature">With reference to one of your own projects, evaluate how effective your knowledge and skills were for this project, and suggest changes or improvements for future projects of a similar nature</a><br/></p>
+</li>
+<li>
+<p><a href="#Explain-control-flow-using-an-example-from-the-JavaScript-programming-language">Explain control flow, using an example from the JavaScript programming language</a><br/></p>
+</li>
+<li>
+<p><a href="#Explain-type-coercion-using-examples-from-the-JavaScript-programming-language">Explain type coercion, using examples from the JavaScript programming language</a><br/></p>
+</li>
+<li>
+<p><a href="#Explain-data-types-using-examples-from-the-JavaScript-programming-language">Explain data types, using examples from the JavaScript programming language</a><br/></p>
+</li>
+<li>
+<p><a href="#Explain-how-arrays-can-be-manipulated-in-JavaScript-using-examples-from-the-JavaScript-programming-language">Explain how arrays can be manipulated in JavaScript, using examples from the JavaScript programming language</a><br/></p>
+</li>
+<li>
+<p><a href="#Explain-how-objects-can-be-manipulated-in-JavaScript-using-examples-from-the-JavaScript-programming-language">Explain how objects can be manipulated in JavaScript, using examples from the JavaScript programming language</a><br/></p>
+</li>
+<li>
+<p><a href="#Explain-how-JSON-can-be-manipulated-in-JavaScript-using-examples-from-the-JavaScript-programming-language">Explain how JSON can be manipulated in JavaScript, using examples from the JavaScript programming language</a><br/></p>
+</li>
+<li>
+<p><a href="#For-the-code-snippet-provided-below-write-comments-for-each-line-of-code-to-explain-its-functionality-In-your-comments-you-must-demonstrates-your-ability-to-recognise-and-identify-functions-ranges-and-classes">For the code snippet provided below, write comments for each line of code to explain its functionality. In your comments you must demonstrates your ability to recognise and identify functions, ranges and classes</a><br/></p>
+</li>
+</ul>
+<h2 id="provide-an-overview-and-description-of-a-standard-source-control-process-for-a-large-project">Provide an overview and description of a standard source control process for a large project</h2>
+<hr>
+<p>Let say you want to check source code or files from start to finish, Version Control or Source control is a tool most projects used. It functions as a time machine in which you can go back from history to present.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">#</th>
+<th style="text-align:left">Functions of Version Control(Source Control)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">Backup and Restore</td>
+<td style="text-align:left">All your work will be saved, edited and can be restored in the beginning up to the recent changes.</td>
+</tr>
+<tr>
+<td style="text-align:left">Synchronization</td>
+<td style="text-align:left">People working in the project can collaborate with source codes and will let them update to the current one.</td>
+</tr>
+<tr>
+<td style="text-align:left">Short-term undo</td>
+<td style="text-align:left">If we made any errors and don't know how to fixed it, we can just disregard the changes and go back to the last known working state.</td>
+</tr>
+<tr>
+<td style="text-align:left">Long-term undo</td>
+<td style="text-align:left">If theres already a lot of source code written and let say they have tag with versions, We can go over it and check the logs for that tag.</td>
+</tr>
+<tr>
+<td style="text-align:left">Track Changes</td>
+<td style="text-align:left">Any changes we made, let say adding, removing, updating or deleting files, we can comment message for that certain change or changes making it easy for yourself or others when you go back and had a look on how your work had developed overtime.</td>
+</tr>
+<tr>
+<td style="text-align:left">Track Ownership</td>
+<td style="text-align:left">All the changes that you've made will be reflected under however made those revisions so everyone working on that file will know whoever is responsible.</td>
+</tr>
+<tr>
+<td style="text-align:left">Sandboxing</td>
+<td style="text-align:left">Basically, you can test whatever you want to change before committing and deploying your changes.</td>
+</tr>
+<tr>
+<td style="text-align:left">Branching and merging</td>
+<td style="text-align:left">This provides us an option for our code to be modular. We can segregate major changes, test it before we merge it back to the working state.</td>
+</tr>
+</tbody>
+</table>
+<br>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">#</th>
+<th style="text-align:left">Basic Setup</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">Repository (repo)</td>
+<td style="text-align:left">This will be your online database thats stores your code.</td>
+</tr>
+<tr>
+<td style="text-align:left">Server</td>
+<td style="text-align:left">This will be your local machine which stores the repository.</td>
+</tr>
+<tr>
+<td style="text-align:left">Client</td>
+<td style="text-align:left">This will be your computer connecting to the repository.</td>
+</tr>
+<tr>
+<td style="text-align:left">Working Set/Working Copy</td>
+<td style="text-align:left">This will be your local files where you made changes.</td>
+</tr>
+<tr>
+<td style="text-align:left">Trunk/Main</td>
+<td style="text-align:left">This will be the main line for your code in the repository.</td>
+</tr>
+</tbody>
+</table>
+<br>
+<h3 id="examples">Examples:</h3>
+<h4 id="checkins">Checkins</h4>
+<p><img src="docs/basic_checkin.png" alt="checkins"> <br/>
+*** In this example, each time we made a change or add something to a code, it provides references <br></p>
+<h4 id="checkouts-and-editing">Checkouts And Editing</h4>
+<p><img src="docs/checkout_edit.png" alt="checkout_edit"> <br/>
+*** In this example, everthing time you check in youl be given the recent version of the code and can go back to previous ones.<br/></p>
+<h4 id="difference">Difference</h4>
+<p><img src="docs/basic_diffs.png" alt="diffs"> <br/>
+*** In this example, we can see the difference between every stages weve made.<br/></p>
+<h4 id="branching">Branching</h4>
+<p><img src="docs/first_branch.png" alt="branch"> <br/>
+*** In this example, we can sandbox any changes we want to implement before adding it to the working state.<br/></p>
+<h4 id="merging">Merging</h4>
+<p><img src="docs/merging.png" alt="merge"> <br/>
+*** In this, example after making those changes in the branch, we added those changes in the main one.<br/></p>
+<h4 id="conflict">Conflict</h4>
+<p><img src="docs/conflict.png" alt="conflict"> <br/>
+*** In this example, we can see two those changes which is different and gives conflict on which is right or wrong before merging to the main state<br/></p>
+<h4 id="tagging">Tagging</h4>
+<p><img src="docs/tagging.png" alt="tagging"> <br/>
+*** In this example, we can tag changes so that it will be easier to reference.<br></p>
+<h2 id="what-are-the-most-important-aspects-of-quality-software">What are the most important aspects of quality software</h2>
+<hr>
+<p>The following are aspects in measuring the quality of a software:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Aspect of Quality Software</th>
+<th style="text-align:left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">Reliability</td>
+<td style="text-align:left">A reliable software should be consistent and plenty software testing is imperative prior to deployment to minimise errors. There is no such thing as a zero-bug software however a reliable software should have very few faults and these faults should be fixed in a timely manner.</td>
+</tr>
+<tr>
+<td style="text-align:left">Understandability</td>
+<td style="text-align:left">A software developer must exercise clear, highly organised and logical structured code. It is difficult to manage a software if it is poorly written. It also affects the effectivity and efficiency during bug-fixing and testing if code is not done in an organised way.</td>
+</tr>
+<tr>
+<td style="text-align:left">Modifiability</td>
+<td style="text-align:left">Similar to understandability, if a software is well-organised, it is easy to make modifications. It should be flexible and any changes to be done should be also be easy to deploy when done.</td>
+</tr>
+<tr>
+<td style="text-align:left">Usability</td>
+<td style="text-align:left">One of the purposes of a software development is to meet specific needs of a client. This can be achieved when a software is effective, and it can only be effective if the user is comfortable using the software after a short training.</td>
+</tr>
+<tr>
+<td style="text-align:left">Testability</td>
+<td style="text-align:left">Testability – Quality of a software depends on testability. If the errors are found and corrected prior deployment, the software becomes reliable. Testing saves time, effort and costs.</td>
+</tr>
+<tr>
+<td style="text-align:left">Portability</td>
+<td style="text-align:left">A software should be able to work in multiple environments and can be transferred to another environment and still work properly with small changes.</td>
+</tr>
+<tr>
+<td style="text-align:left">Efficiency</td>
+<td style="text-align:left">An efficient software should use very little physical resources as can possibly get but still perform a function as required.</td>
+</tr>
+</tbody>
+</table>
+<br/>
+<h2 id="outline-a-standard-high-level-structure-for-a-mern-stack-application-and-explain-the-components">Outline a standard high level structure for a MERN stack application and explain the components</h2>
+<hr>
+<p><img src="docs/mern.jpg" alt="mern"> <br/></p>
+<p>MERN stack is one of the JavaScript web app stacks that is being used in creating web applications. Its main purpose is to create effective, efficient, fast and flexible web applications by putting together these four components – MongoDB, Express, React and Node.js.<br/></p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Components</th>
+<th style="text-align:left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">MongoDB</td>
+<td style="text-align:left">Compared to other database, MongoDB is a document database which is non relational (NOSQL) and doesn't use schema formats like tables and columns. The data format of the document is query through Javascript Object Notation (JSON).</td>
+</tr>
+<tr>
+<td style="text-align:left">Express</td>
+<td style="text-align:left">A back-end or server side framework. Its considered web application framework for Node. It simplifies the task of writing server side codes. Known for its speed and minimalist structure, which features many available plugins which will make your code DRY.</td>
+</tr>
+<tr>
+<td style="text-align:left">React</td>
+<td style="text-align:left">It is one of javaScript libraries for client side interface. It was created by Facebook. Its library is used for creating views in HTML. React views are declarative which automate the creation of repetitive HTML or DOM elements.</td>
+</tr>
+<tr>
+<td style="text-align:left">Node.js</td>
+<td style="text-align:left">A cross-platform JavaScript runtime environment which is built on Chrome’s V8 JavaScript engine. It is designed to run Javascript code with multiple files.</td>
+</tr>
+</tbody>
+</table>
+<br/>
+<h2 id="a-team-is-about-to-engage-in-a-project-developing-a-website-for-a-small-business-what-knowledge-and-skills-would-they-need-in-order-to-develop-the-project">A team is about to engage in a project, developing a website for a small business. What knowledge and skills would they need in order to develop the project</h2>
+<hr>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">#</th>
+<th style="text-align:left">Skills / Knowledge to develop a Website</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">Programming</td>
+<td style="text-align:left">there are plenty of programming languages available and they are created for different purposes. HTML, CSS and JavaScript are the three most popular. HTML is short for Hypertext Markup Language, it is used in creating pages in web browser. Contents and links that can be viewed in the web pages are done using HTML. CSS means Cascading Style Sheets, this allows programmer to create style on pages. Colours, fonts and layout that we view in web pages are done using CSS. JavaScript on the other hand is ....</td>
+</tr>
+<tr>
+<td style="text-align:left">Learning</td>
+<td style="text-align:left">Web developers should not only know how about programming languages but also knowledgeable about the project. It is important that the programmer is aware of the purpose why there is a project and able to meet expectations.</td>
+</tr>
+<tr>
+<td style="text-align:left">Testing</td>
+<td style="text-align:left">Testing during the development phase and prior to delivering the final product are equally both important. This is to save time, money and make sure everything is working fine to satisfy customer requirements.</td>
+</tr>
+<tr>
+<td style="text-align:left">Basic Knowledge of Design</td>
+<td style="text-align:left">A developer should have basic understanding in graphic design or using graphic tools. This assists the developer into building the website as to what the customer desires.</td>
+</tr>
+<tr>
+<td style="text-align:left">SEO</td>
+<td style="text-align:left">It is important for a developer to have understanding on how search engines work. As the team is developing a website for a small business, it is vital for the business to have online presence and increase customers.</td>
+</tr>
+<tr>
+<td style="text-align:left">Understanding Common Security Attacks and How to Prevent Them</td>
+<td style="text-align:left">Protecting website from Cybersecurity attacks are essential. Any website developer should have a basic understanding of different types and how to prevent as such. These could pose serious threats to businesses if not considered at time of web development.</td>
+</tr>
+<tr>
+<td style="text-align:left">Image Resizing and Effects</td>
+<td style="text-align:left">A website developer should be familiar in using Photoshop or related graphics editor. In this day and age, customers are more inclined into visually minded web pages.</td>
+</tr>
+<tr>
+<td style="text-align:left">Resoluteness</td>
+<td style="text-align:left">Resoluteness is a character of a person rather than a skill. It takes an adequate of determination to learn from mistakes, fixing the problem and finishing a task.</td>
+</tr>
+<tr>
+<td style="text-align:left">Confidence</td>
+<td style="text-align:left">A website developer should stay focused on his task and believe in one’s self that it can be done.</td>
+</tr>
+<tr>
+<td style="text-align:left">Frustration Tolerance and Patience</td>
+<td style="text-align:left">When working on a project, there are plenty of testing that needs to be done. It is important that the developer does not give up when faced with trials.</td>
+</tr>
+<tr>
+<td style="text-align:left">Time Management and Detailed Planning</td>
+<td style="text-align:left">It very important for the team to do lots of planning when working on a project. A project management software or applications can be used to delegate tasks, managing hours and tracking progress.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="with-reference-to-one-of-your-own-projects-discuss-what-knowledge-or-skills-were-required-to-complete-your-project-and-to-overcome-challenges">With reference to one of your own projects, discuss what knowledge or skills were required to complete your project, and to overcome challenges</h2>
+<hr>
+<p>In relation to my last rails project (marketplace app), listed below were the knowledge or skills required and challenges encountered;<br/></p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Knowledge / Skills</th>
+<th style="text-align:left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">Programming</td>
+<td style="text-align:left">As part of the requirement, we need to create the application using Ruby on Rails. Upon learning Ruby on the first term, it helps to learn the basics for the MVC framework such as Ruby on Rails. Also learning HTML and CSS in term 1 contributes in designing and styling the Client-side of the application.</td>
+</tr>
+<tr>
+<td style="text-align:left">Learning</td>
+<td style="text-align:left">Before or as you build the project, you will encounter some ideas that you want to implement in the application. Most of the time, these will include a lot of reading documentations and even watching tutorials on how it works. Some of these concept were not taught in school so you need to do a lot of research.</td>
+</tr>
+<tr>
+<td style="text-align:left">Testing</td>
+<td style="text-align:left">As we build along the project, we make sure that we test the application after every feature we implement. This include testing on both development and production. By doing that, it helps us narrow down the source of errors or bugs if theres any.</td>
+</tr>
+<tr>
+<td style="text-align:left">Design</td>
+<td style="text-align:left">By learning HTML and CSS on the first term, we managed to implement some knowledge and techniques to our design. The use of wireframes and mood boards helps us layout the basic design and build up as we go along. Learning CSS libraries such as Bootstrap and Bulma contributes well for the overall user experience.</td>
+</tr>
+<tr>
+<td style="text-align:left">Time Management and Planning</td>
+<td style="text-align:left">Whether you’re in school learning or at work for a company, we need to stay on top of your schedule and your projects This can mean getting to know productivity apps like task lists or calendars or, especially if you’re in a large organization. We've used project tracking tools like Trello to keep track on the development of the project. Whatever the tools, mastering the art of prioritizing and tracking your work will be essential.</td>
+</tr>
+</tbody>
+</table>
+<br/>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Challenges Encountered</th>
+<th style="text-align:left">How we overcome</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">Time Limitation</td>
+<td style="text-align:left">Delivering a project in a very short period of time was challenging. Judgment and emotions affect decision making when working under pressure. Using Trello and Canban methodology, we were able to manage our time and tasks.</td>
+</tr>
+<tr>
+<td style="text-align:left">User-friendly Design</td>
+<td style="text-align:left">End users of the project does not have understandings of how the website was done or what programming languages were used. They are more concerned of what the web pages will look like, how appealing it is and how easy it is to navigate. Usability can be perspective. We asked our educators and associates to test the website and get some feedback.</td>
+</tr>
+</tbody>
+</table>
+<br/>
+<h2 id="with-reference-to-one-of-your-own-projects-evaluate-how-effective-your-knowledge-and-skills-were-for-this-project-and-suggest-changes-or-improvements-for-future-projects-of-a-similar-nature">With reference to one of your own projects, evaluate how effective your knowledge and skills were for this project, and suggest changes or improvements for future projects of a similar nature</h2>
+<hr>
+<p>If given chance to redo everything, il will consider;</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Steps</th>
+<th style="text-align:left">Changes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">Reevaluate</td>
+<td style="text-align:left">Using my knowledge in software development, learning new skills and plenty of testing, I was able to finish the project. In future projects, it will be great to work in teams so we can collaborate, share the load and increase efficiency.</td>
+</tr>
+<tr>
+<td style="text-align:left">Figure out the failures</td>
+<td style="text-align:left">Creating a project and learning new things can be quite exciting. During planning, I was inclined to add plenty of features not realising how complicated it can be and that it took much of my time trying to figure out how to do it. In future projects, I would still want to add a feature or two that I know the end user will appreciate, to challenge myself but also make sure that it can be done within the time-frame.</td>
+</tr>
+</tbody>
+</table>
+<br/>
+I could say that with reference to my projects they were satisfactory for me and probably for others and the skills and knowledge that I acquired while studying equipped me on how to proceed.<br/>
+<h2 id="explain-control-flow-using-an-example-from-the-javascript-programming-language">Explain control flow, using an example from the JavaScript programming language</h2>
+<hr>
+<p>Most of our code involves control flow in which often times we want our program to act differently based on the information supplied to it. In Javascript it uses control flow like any other languages, we just need to understand and be able to use different operators and how to use them.<br/></p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Operators</th>
+<th style="text-align:center">Description</th>
+<th style="text-align:center">Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">Undefined and Null</td>
+<td style="text-align:center">Whenever you are looking for something that does not exist like a variable which has no value yet then you'll get undefined. Null is an object that we can use to tell others that the item exists, but there is no value at the moment.</td>
+<td style="text-align:center"><img src="docs/undefined.png" alt="undefined"> <img src="docs/null.png" alt="null"></td>
+</tr>
+<tr>
+<td style="text-align:left">Truthiness</td>
+<td style="text-align:center">It gives us a true or false value when we use an if or other statements otherwise Javascript will perform type coercion and will transform it to Boolean value which will be truthy or falsey.</td>
+<td style="text-align:center"><img src="docs/truth.png" alt="truth"></td>
+</tr>
+<tr>
+<td style="text-align:left">Comparison Operators</td>
+<td style="text-align:center">The triple equal sign(===) compares everything about two items which includes its type and value. The not equal which is represented by adding exclamation symbol (!==) does the opposite of equality operator.</td>
+<td style="text-align:center"><img src="docs/comparison.png" alt="comparison"> <img src="docs/equal.png" alt="equal"> <img src="docs/not_equal.png" alt="not_equal"></td>
+</tr>
+<tr>
+<td style="text-align:left">Logical Operators</td>
+<td style="text-align:center">The AND which is composed with two ampersands &amp;&amp; assesses the two articulations and returns valid if the two articulations are valid. Otherwise, if one or both of them is false it will return false. The OR is composed with two vertical bar checks on the off chance that one of the articulations is valid. It will return valid in the event that one or both of the articulations is valid. It will return false if BOTH articulations are false. Lastly, the NOT operator returns the opposite Boolean value you've passed to it.</td>
+<td style="text-align:center"><img src="docs/and.png" alt="and"> <img src="docs/or.png" alt="or"> <img src="docs/not.png" alt="not"></td>
+</tr>
+<tr>
+<td style="text-align:left">If Operator</td>
+<td style="text-align:center">If operators check if the statement we pass is true then proceed to executing some functions otherwise skips the code and do something else.</td>
+<td style="text-align:center"><img src="docs/if.png" alt="if"></td>
+</tr>
+<tr>
+<td style="text-align:left">If,Else if, Else</td>
+<td style="text-align:center">These statements must be used with if and must come after it. These statements are going to be evaluated if the initial if returns false. we are able to consider the else if as another if statement that has been chained and we can have as many else if statements we want. The else statement will always come at the tip of an if-else if chain, and can act as a default. If none of the expressions returned true, the else code block is going to be run regardless of what. If any of the previous if alternatively if expressions are true, the else statement code block won't be run.</td>
+<td style="text-align:center"><img src="docs/if_elseif.png" alt="if_elseif"> <img src="docs/if_else.png" alt="if_else"></td>
+</tr>
+</tbody>
+</table>
+<h2 id="explain-type-coercion-using-examples-from-the-javascript-programming-language">Explain type coercion, using examples from the JavaScript programming language</h2>
+<hr>
+<h3 id="type-coercion">Type Coercion</h3>
+<p>Type Coercion is that the process of converting type of value from one type to a different like string to boolean, object to boolean, and so on. Any type, be it primitive or an object, could be a valid subject for type coercion. <br/></p>
+<p><img src="docs/type_coercion.png" alt="type_coercion"><br/></p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Types of Coercion</th>
+<th style="text-align:center">Description</th>
+<th style="text-align:center">Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">Explicit or ‘Type casting’</td>
+<td style="text-align:center">This happens when the programmer explicitly converts the kind of value to the required type.</td>
+<td style="text-align:center"><img src="docs/explicit.png" alt="explicit"></td>
+</tr>
+<tr>
+<td style="text-align:left">Implicit</td>
+<td style="text-align:center">They are the sort of conversions that are hidden. JavaScript being the weakly-typed language, values are often converted between differing types of ‘implicitly’.</td>
+<td style="text-align:center"><img src="docs/implicit.png" alt="implicit"></td>
+</tr>
+</tbody>
+</table>
+<br/>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Types of Conversion</th>
+<th style="text-align:center">Description</th>
+<th style="text-align:center">Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">String conversion</td>
+<td style="text-align:center">The toString() may also be accustomed convert any type to string, however, as explicit because it might sound from the code, it's much underlying nature. the explanation being it can not be directly used on primitive values like numbers or Boolean true. So, a kind variable being an object wrapper will invoke the toString() method.</td>
+<td style="text-align:center"><img src="docs/string_explicit.png" alt="string_explicit"> <img src="docs/string_implicit.png" alt="string_implicit"></td>
+</tr>
+<tr>
+<td style="text-align:left">Numeric conversion</td>
+<td style="text-align:center">The Number(..) function coerces to the other type value to a primitive number value. in a different way of explicit coercion is by using unary operator + where it explicitly coerces its operand (i) to number value.</td>
+<td style="text-align:center"><img src="docs/numeric_explicit.png" alt="numeric_explicit"> <img src="docs/numeric_implicit.png" alt="numeric_implicit"></td>
+</tr>
+<tr>
+<td style="text-align:left">Boolean conversion</td>
+<td style="text-align:center">To explicitly convert the value to a boolean type Boolean(..) function is used. a bit like the unary + operator coerces a worth to variety the unary !== operator explicitly coerces a worth to a boolean. '!' operator explicitly inverses the truthy to falsy and the other way around. Any value utilized in these contexts that's not already a boolean will first be implicitly coerced to a boolean. Both Or and And operators perform a boolean test on the primary operand (a or c). For the OR operator, if the test is true, the OR expression ends up in the value of the primary operand (a or c). If the test is fake, the OR expression ends up in the value of the second operand (b). Inversely, for the &amp;&amp; operator, if the test is true, the &amp;&amp; expression ends up in the value of the second operand (b). If the test not true, the AND expression ends up in the value of the primary operand (a or c). This test returns the primary falsy value.</td>
+<td style="text-align:center">Explicit <br/> <img src="docs/boolean_explicit.png" alt="boolean_explicit"> <br/> Implicit <br/> <img src="docs/boolean_implicit.png" alt="boolean_implicit"></td>
+</tr>
+</tbody>
+</table>
+<h2 id="explain-data-types-using-examples-from-the-javascript-programming-language">Explain data types, using examples from the JavaScript programming language</h2>
+<hr>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Data Types</th>
+<th style="text-align:left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">Number</td>
+<td style="text-align:left">The numbers in Javascript were '+Infinity', ' -Infinity', 'NaN' (Not a number). Infinity is the numeric value that represents a positive number that approaches infinity and -Infinity is the numeric value that represents a negative number that approaches infinity while NaN is the numeric value that represents a non-number, standing for not variety <img src="docs/infinity.png" alt="infinity"><br/> <img src="docs/nan.png" alt="nan"></td>
+</tr>
+<tr>
+<td style="text-align:left">String</td>
+<td style="text-align:left">String represents some textual data and its values were enclosed in quotation marks often times may be single or double quotation. <img src="docs/string.png" alt="string"></td>
+</tr>
+<tr>
+<td style="text-align:left">Boolean</td>
+<td style="text-align:left">It represents a logical entity that may have one among two values true or false. <img src="docs/boolean.png" alt="boolean"></td>
+</tr>
+<tr>
+<td style="text-align:left">Undefined</td>
+<td style="text-align:left">The undefined value is assigned to a newly created variable that isn’t assigned with any value. <img src="docs/indefined_data.png" alt="undefined"></td>
+</tr>
+<tr>
+<td style="text-align:left">Null</td>
+<td style="text-align:left">Null shows a end point to a non-existent entity or some invalid address in memory. <img src="docs/null_data.png" alt="null"></td>
+</tr>
+<tr>
+<td style="text-align:left">Symbol</td>
+<td style="text-align:left">The Symbol() function makes a value of type symbol. <img src="docs/symbol.png" alt="symbol"></td>
+</tr>
+<tr>
+<td style="text-align:left">Object</td>
+<td style="text-align:left">Objects are often represented with curly braces which represent an instance that one can access. <img src="docs/obj1.png" alt="obj1"> <br/> <img src="docs/obj2.png" alt="obj2"></td>
+</tr>
+</tbody>
+</table>
+<h2 id="explain-how-arrays-can-be-manipulated-in-javascript-using-examples-from-the-javascript-programming-language">Explain how arrays can be manipulated in JavaScript, using examples from the JavaScript programming language</h2>
+<hr>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Array Manipulation</th>
+<th style="text-align:left">Description</th>
+<th style="text-align:center">Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">Iterating Array</td>
+<td style="text-align:left">The <strong>for</strong> loop is one amongst the foremost basic which takes a starting index and so loops through to the ending index which must be an integer.</td>
+<td style="text-align:center"><img src="docs/for_loop.png" alt="for_loop"></td>
+</tr>
+<tr>
+<td style="text-align:left"></td>
+<td style="text-align:left"><strong>while</strong> loops whenever a condition stays true.</td>
+<td style="text-align:center"><img src="docs/while.png" alt="while_loop"></td>
+</tr>
+<tr>
+<td style="text-align:left"></td>
+<td style="text-align:left"><strong>do...while</strong> loop will always run the first iteration.</td>
+<td style="text-align:center"><img src="docs/do_while.png" alt="do_while"></td>
+</tr>
+<tr>
+<td style="text-align:left"></td>
+<td style="text-align:left"><strong>forEach</strong> will iterate through every entry of the array which takes a callback function where you can execute code.</td>
+<td style="text-align:center"><img src="docs/for_each.png" alt="for_each"></td>
+</tr>
+<tr>
+<td style="text-align:left">Find Element in Array</td>
+<td style="text-align:left"><strong>Array.find</strong> will return the element in the array with the given condition.</td>
+<td style="text-align:center"><img src="docs/find.png" alt="find"></td>
+</tr>
+<tr>
+<td style="text-align:left"></td>
+<td style="text-align:left"><strong>Array.findIndex</strong> will return the index of the element in the array with the given condition.</td>
+<td style="text-align:center"><img src="docs/find_index.png" alt="find_index"></td>
+</tr>
+<tr>
+<td style="text-align:left">Check if Element Exists in Array</td>
+<td style="text-align:left"><strong>Array.includes</strong> checks if an item exists in an array.</td>
+<td style="text-align:center"><img src="docs/includes.png" alt="includes"></td>
+</tr>
+<tr>
+<td style="text-align:left"></td>
+<td style="text-align:left"><strong>Array.some</strong> checks if some items meet the condition given. It takes a callback function which returns a boolean for the condition.</td>
+<td style="text-align:center"><img src="docs/some.png" alt="some"></td>
+</tr>
+<tr>
+<td style="text-align:left"></td>
+<td style="text-align:left"><strong>Array.every</strong> checks if every item meet the condition given. It takes a callback function which returns a boolean for the condition.</td>
+<td style="text-align:center"><img src="docs/every.png" alt="every"></td>
+</tr>
+<tr>
+<td style="text-align:left">Check If an Object Is an Array</td>
+<td style="text-align:left"><strong>Array.isArray</strong> checks if an object given is an array. It is a convenient way to check if an element is an array.</td>
+<td style="text-align:center"><img src="docs/array.png" alt="array"></td>
+</tr>
+<tr>
+<td style="text-align:left">Remove Duplicates in Array</td>
+<td style="text-align:left"><strong>Set</strong> is a object that cannot have duplicate entries. You can create a new <strong>Set</strong> from an array then convert it back to an array.</td>
+<td style="text-align:center"><img src="docs/set.png" alt="set"></td>
+</tr>
+<tr>
+<td style="text-align:left"></td>
+<td style="text-align:left"><strong>Array.slice(startIndex, endIndex)</strong> Returns a new array from startIndex to endIndex — 1.</td>
+<td style="text-align:center"><img src="docs/slice.png" alt="slice"></td>
+</tr>
+<tr>
+<td style="text-align:left"></td>
+<td style="text-align:left"><strong>Array.splice(index, numberOfItems)</strong> Remove array item in place with the given index, and then numberOfItems after it.</td>
+<td style="text-align:center"><img src="docs/splice.png" alt="splice"></td>
+</tr>
+<tr>
+<td style="text-align:left"></td>
+<td style="text-align:left"><strong>Array.sort</strong> sorts array in place according to the condition you return in <strong>sortFunction</strong>.</td>
+<td style="text-align:center"><img src="docs/sort.png" alt="sort"></td>
+</tr>
+<tr>
+<td style="text-align:left"></td>
+<td style="text-align:left"><strong>Array.fill</strong> will add or replace the element with the element specified from <em>startIndex</em> to <em>endIndex</em>.</td>
+<td style="text-align:center"><img src="docs/fill.png" alt="fill"></td>
+</tr>
+<tr>
+<td style="text-align:left"></td>
+<td style="text-align:left"><strong>Array.flat</strong> function does not do a good job of recursively flatten arrays. The depth is limited and it does not flatten all kinds of nested array structures.</td>
+<td style="text-align:center"><img src="docs/flat.png" alt="flat"></td>
+</tr>
+<tr>
+<td style="text-align:left"></td>
+<td style="text-align:left"><strong>Array.join</strong> will return a string by concatenating the entries after they are converted to string with separator between each entry.</td>
+<td style="text-align:center"><img src="docs/join.png" alt="join"></td>
+</tr>
+<tr>
+<td style="text-align:left"></td>
+<td style="text-align:left"><strong>Array.indexOf</strong> will return the first index of the <em>elementToFind</em> in the array.</td>
+<td style="text-align:center"><img src="docs/index_of.png" alt="index_of"></td>
+</tr>
+<tr>
+<td style="text-align:left"></td>
+<td style="text-align:left"><strong>Array.lastIndexOf</strong> will return the last index of the elementToFind in the array.</td>
+<td style="text-align:center"><img src="docs/last_index.png" alt="last_index"></td>
+</tr>
+<tr>
+<td style="text-align:left"></td>
+<td style="text-align:left"><strong>Array.push</strong> adds a new element to an array.</td>
+<td style="text-align:center"><img src="docs/push.png" alt="push"></td>
+</tr>
+<tr>
+<td style="text-align:left"></td>
+<td style="text-align:left"><strong>Array.pop</strong> removes the last element of the array.</td>
+<td style="text-align:center"><img src="docs/pop.png" alt="pop"></td>
+</tr>
+<tr>
+<td style="text-align:left"></td>
+<td style="text-align:left"><strong>Array.map</strong> returns a new array which transforms the existing array’s element by calling the mapFunction . mapFunction takes one argument, which is the array element.</td>
+<td style="text-align:center"><img src="docs/map.png" alt="map"></td>
+</tr>
+<tr>
+<td style="text-align:left"></td>
+<td style="text-align:left"><strong>Array.reduce</strong> combines elements of an array to return a value by calling the reduceFunction on all the elements to combine them. reduceFunction takes 2 arguments, which is the current and next element in the array.</td>
+<td style="text-align:center"><img src="docs/reduce.png" alt="reduce"></td>
+</tr>
+<tr>
+<td style="text-align:left"></td>
+<td style="text-align:left"><strong>Array.reverse</strong> returns a new array with the existing array’s elements in reverse order.</td>
+<td style="text-align:center"><img src="docs/reverse.png" alt="reverse"></td>
+</tr>
+</tbody>
+</table>
+<h2 id="explain-how-objects-can-be-manipulated-in-javascript-using-examples-from-the-javascript-programming-language">Explain how objects can be manipulated in JavaScript, using examples from the JavaScript programming language</h2>
+<hr>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Object Manipulation</th>
+<th style="text-align:left">Description</th>
+<th style="text-align:center">Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">Accessing Object Properties</td>
+<td style="text-align:left">We are able to access object properties in two other ways. one among them is bracket notation and another is that the dot notation.</td>
+<td style="text-align:center"><img src="docs/bracket_dot.png" alt="bracket_dot"></td>
+</tr>
+<tr>
+<td style="text-align:left">Get Values from an Object</td>
+<td style="text-align:left">Object.values() returns an array of the values of an object</td>
+<td style="text-align:center"><img src="docs/values.png" alt="values"></td>
+</tr>
+<tr>
+<td style="text-align:left">Get Keys from an Object</td>
+<td style="text-align:left">Object.keys() gives back an array of the keys of an its object.</td>
+<td style="text-align:center"><img src="docs/keys.png" alt="keys"></td>
+</tr>
+<tr>
+<td style="text-align:left">Object To Array Entries</td>
+<td style="text-align:left">Object.entries() creates an array that contains arrays of key/value pairs of an object.</td>
+<td style="text-align:center"><img src="docs/entries.png" alt="entries"></td>
+</tr>
+<tr>
+<td style="text-align:left">Merging Object with Spread</td>
+<td style="text-align:left">Merging two objects which returns a brand new object.</td>
+<td style="text-align:center"><img src="docs/merge.png" alt="merge"></td>
+</tr>
+<tr>
+<td style="text-align:left">Combining Two Object</td>
+<td style="text-align:left">Object.assign() is comparable to the spread operator. It allows for objects to be combined together.</td>
+<td style="text-align:center"><img src="docs/assign.png" alt="assign"></td>
+</tr>
+<tr>
+<td style="text-align:left">Freezing An Object</td>
+<td style="text-align:left">Object.freeze() prevents from modifying existing properties or adding new properties and values within the object. It’s often what people think const does, however const allows you to change an object.</td>
+<td style="text-align:center"><img src="docs/freeze.png" alt="freeze"></td>
+</tr>
+<tr>
+<td style="text-align:left">Object Frozen or Not</td>
+<td style="text-align:left">The Object.isFrozen() determines if an object is frozen. Return Boolean value.</td>
+<td style="text-align:center"><img src="docs/frozen.png" alt="frozen"></td>
+</tr>
+<tr>
+<td style="text-align:left">Sealing an Object</td>
+<td style="text-align:left">Object.seal() seals an object, preventing new properties from being added thereto and marking all existing properties as non-configurable. Values of present properties can still be changed as long as they're writable.</td>
+<td style="text-align:center"><img src="docs/seal.png" alt="seal"></td>
+</tr>
+<tr>
+<td style="text-align:left">Object Sealed or Not</td>
+<td style="text-align:left">The Object.isSealed() method finds out if an object is sealed.</td>
+<td style="text-align:center"><img src="docs/sealed.png" alt="sealed"></td>
+</tr>
+<tr>
+<td style="text-align:left">Localization</td>
+<td style="text-align:left">Object.toLocaleString() method returns a string representing the article. This method is supposed to be overridden by derived objects for locale-specific purposes.</td>
+<td style="text-align:center"><img src="docs/local.png" alt="local"></td>
+</tr>
+</tbody>
+</table>
+<br/>
+<h2 id="explain-how-json-can-be-manipulated-in-javascript-using-examples-from-the-javascript-programming-language">Explain how JSON can be manipulated in JavaScript, using examples from the JavaScript programming language</h2>
+<hr>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">JSON Manipulation</th>
+<th style="text-align:left">Description</th>
+<th style="text-align:center">Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">JSON.parse()</td>
+<td style="text-align:left">To parse is to divide a sentence into grammatical parts and identify the parts and their relations to every other. In Software coding, a string is traditionally a sequence of characters. after we receive data from the API server, the information is often a string. We parse the information using JSON.parse() which turns the information into a JavaScript object. Before parsing it, it's just a string, some text and you can't access the information encoded in it. After parsing it, it becomes a JavaScript Object and you'll be able to access the information.</td>
+<td style="text-align:center"><img src="docs/parse.png" alt="parse"></td>
+</tr>
+<tr>
+<td style="text-align:left">JSON.stringify()</td>
+<td style="text-align:left">JSON.stringify() turns an object to a JSON string. When sending data to a back-end server, the information has got to be a string that converts an object into a string by using the function. It can take 2 additional arguments in which the first one being a replacer function and the second parameter is a string or number value to use as an area within the returned string.</td>
+<td style="text-align:center"><img src="docs/stringify.png" alt="stringify"></td>
+</tr>
+</tbody>
+</table>
+<h2 id="for-the-code-snippet-provided-below-write-comments-for-each-line-of-code-to-explain-its-functionality-in-your-comments-you-must-demonstrates-your-ability-to-recognise-and-identify-functions-ranges-and-classes">For the code snippet provided below, write comments for each line of code to explain its functionality. In your comments you must demonstrates your ability to recognise and identify functions, ranges and classes.</h2>
+<hr>
+<pre class="hljs"><code><div><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Car</span> </span>{<span class="hljs-comment">// Initialise a class named ‘Car’</span>
+  <span class="hljs-keyword">constructor</span>(brand) {<span class="hljs-comment">// Initialize of a constructor method with an argument of ‘brand’.  The constructors forms the properties of the class.  The constructor is called every Car class is initialized</span>
+    <span class="hljs-keyword">this</span>.carname = brand;<span class="hljs-comment">// the parameter ‘brand’ from constructor is called to by ‘this.carname’.  ‘this’ is refering to the specific instance of the class</span>
+  }<span class="hljs-comment">//end of constructor method.</span>
+  present() {<span class="hljs-comment">// Initialize  class  name ‘present’</span>
+    <span class="hljs-keyword">return</span> <span class="hljs-string">'I have a '</span> + <span class="hljs-keyword">this</span>.carname; <span class="hljs-comment">// will return the join string of ‘I have a’ and the value of ‘this.carname’.</span>
+  } <span class="hljs-comment">//end of ‘present’ function</span>
+} <span class="hljs-comment">// end of ‘Car’ class.</span>
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Model</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Car</span> </span>{<span class="hljs-comment">//Initialize a class named ‘Model’ which inherits from the class ‘Car’.  </span>
+  <span class="hljs-keyword">constructor</span>(brand, mod) { <span class="hljs-comment">// Initialize a constructor which takes parameter ‘brand’ and ‘mod’. In which ‘brand’ is inherited from the ‘Car’ class.</span>
+    <span class="hljs-keyword">super</span>(brand); <span class="hljs-comment">// the key super indicates that 'brand is inherited from Car class</span>
+    <span class="hljs-keyword">this</span>.model = mod; <span class="hljs-comment">//the parameter ‘mod’ is referred to by ‘this.model’ comes from the constructor in Model class is equated to the model variable  ‘.</span>
+  } <span class="hljs-comment">//end of constructor method</span>
+  show() { <span class="hljs-comment">// Initializeof a class function ‘show’</span>
+    <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.present() + <span class="hljs-string">', it was made in '</span> + <span class="hljs-keyword">this</span>.model; <span class="hljs-comment">// return of a joined string of the value from the inherited class method of present  and the value of ‘this.model’.  </span>
+  } <span class="hljs-comment">// end of the class method</span>
+} <span class="hljs-comment">// end of the class ‘Model’</span>
+
+<span class="hljs-keyword">let</span> makes = [<span class="hljs-string">'Ford'</span>, <span class="hljs-string">'Holden'</span>, <span class="hljs-string">'Toyota'</span>]; <span class="hljs-comment">// creates an array assigned to  variable ‘makes’ with string type values of "Ford", "Holden", "Toyota". </span>
+<span class="hljs-keyword">let</span> models = <span class="hljs-built_in">Array</span>.from(<span class="hljs-keyword">new</span> <span class="hljs-built_in">Array</span>(<span class="hljs-number">40</span>), (x, i) =&gt; i + <span class="hljs-number">1980</span>); <span class="hljs-comment">// creates of an array of 40 elements with values from 1980 plus 39 so 2019 in which ‘x’ is the value of the element and ‘i’ is the iterator.  ‘i’ plus to 1980 to form the value for the ‘x’ element of the new array. </span>
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">randomIntFromInterval</span>(<span class="hljs-params">min, max</span>) </span>{ <span class="hljs-comment">// initialize  a function taking  ‘min’ and ‘max’ as parameter.</span>
+  <span class="hljs-keyword">return</span> <span class="hljs-built_in">Math</span>.floor(<span class="hljs-built_in">Math</span>.random() * (max - min + <span class="hljs-number">1</span>) + min); <span class="hljs-comment">// ‘Math.random()’  returns a random value between 1 and 0 then multiplied by the ‘Math.random()’,  will then return  a value based on ‘Math.random()’.  ‘Math.floor()’ will return a rounded-down integer of the value from ‘Math.random()*(max-min+1)+min’.  </span>
+} <span class="hljs-comment">// end of randomIntFromInterval function</span>
+
+<span class="hljs-keyword">for</span> (model <span class="hljs-keyword">of</span> models) { <span class="hljs-comment">//Initialized a for-loop from the ‘models’ array with ‘model’ as the iterator</span>
+  make = makes[randomIntFromInterval(<span class="hljs-number">0</span>, makes.length - <span class="hljs-number">1</span>)]; <span class="hljs-comment">// stores random string from the makes array  to the make variable.</span>
+  model = models[randomIntFromInterval(<span class="hljs-number">0</span>, makes.length - <span class="hljs-number">1</span>)]; <span class="hljs-comment">// stores a value of either 1980, 1981, 1982 in the model variable using the ‘randomIntFromInterval’ function with values of 0 for ‘min’ and 3 for max .  </span>
+
+  mycar = <span class="hljs-keyword">new</span> Model(make, model); <span class="hljs-comment">// creating a new instance of the ‘Model’ object and stored in my car variable with make and model as parameters</span>
+  <span class="hljs-built_in">console</span>.log(mycar.show()); <span class="hljs-comment">// printing the show method from from the model object stored in variable ‘mycar’.</span>
+} <span class="hljs-comment">// end of for loop</span>
+</div></code></pre>
+<h2 id="references">References</h2>
+<hr>
+<p>A Visual Guide to Version Control, Better Explained , https://betterexplained.com/articles/a-visual-guide-to-version-control/ <br/></p>
+<p>The Seven Aspects of Software Quality, Silas Reinagel, https://www.silasreinagel.com/blog/2016/11/15/the-seven-aspects-of-software-quality/ <br/></p>
+<p>Everything You Need to Know about the MERN Stack, Hyperion Development, https://blog.hyperiondev.com/index.php/2018/09/10/everything-need-know-mern-stack/ <br/></p>
+<p>12 Skills You Need to Develop a Website, Julia Blake, https://onextrapixel.com/12-skills-you-need-to-develop-a-website/ <br/></p>
+<p>Introduction to JavaScript: Control Flow, Mahendra Choudhary, https://medium.com/javascript-in-plain-english/introduction-to-javascript-control-flow-6272f92b75fa <br/></p>
+<p>Intro to Type Coercion in JavaScript, Abid Rahim, https://medium.com/@abid.rahim1/intro-to-type-coercion-in-javascript-5b9a397c1e95 <br/></p>
+<p>Basics of JavaScript: Data Types, Tim Han, https://medium.com/@timhancodes/basics-of-javascript-data-types-385bab24b51 <br/></p>
+<p>How to Manipulate Arrays in JavaScript, Bolaji Ayodeji,https://www.freecodecamp.org/news/manipulating-arrays-in-javascript/ <br/></p>
+<p>Manipulating Objects in JavaScript, Todd Fronenberg, https://medium.com/@TK_CodeBear/manipulating-objects-in-javascript-59fefeb6a738 <br/></p>
+<p>Understanding JSON in JavaScript, Timothy Robards, https://medium.com/@timothyrobards/understanding-json-in-javascript-5098876d0915 <br/></p>
+
+</body>
+</html>
